@@ -7,8 +7,10 @@ class CreateMovies < ActiveRecord::Migration[5.0]
       t.boolean :checked_out
       t.integer :checkout_count
       t.date :due_date
-      t.integer :user_id, foreign_key: true
+      t.integer :user_id
       t.integer :condition
+
+      t.timestamps
     end
   end
 end
