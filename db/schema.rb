@@ -16,16 +16,13 @@ ActiveRecord::Schema.define(version: 20161104163621) do
   enable_extension "plpgsql"
 
   create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "year"
-    t.string   "description"
-    t.boolean  "checked_out"
-    t.integer  "checkout_count"
-    t.date     "due_date"
-    t.integer  "user_id"
-    t.integer  "condition"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string  "title"
+    t.integer "year"
+    t.string  "description"
+    t.integer "checkout_count"
+    t.date    "due_date"
+    t.integer "user_id"
+    t.integer "condition"
   end
 
   create_table "users", force: :cascade do |t|
