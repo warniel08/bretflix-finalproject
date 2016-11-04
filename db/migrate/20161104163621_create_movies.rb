@@ -4,7 +4,6 @@ class CreateMovies < ActiveRecord::Migration[5.0]
       t.string :title
       t.integer :year
       t.string :description
-      t.boolean :checked_out
       t.integer :checkout_count
       t.date :due_date
       t.integer :user_id, foreign_key: true
