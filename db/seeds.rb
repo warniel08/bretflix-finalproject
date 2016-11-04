@@ -12,5 +12,5 @@
 end
 
 10.times do
-  Movie.create([{:title => Faker::Book.title, :checked_out => true, year: 2016, description: "Awesome", checkout_count: 4, due_date: Faker::Date.forward(2), condition: 2}])
+  Movie.create([{:title => Faker::Book.title, :checked_out => true, year: 2016, description: "Awesome", checkout_count: 4, due_date: Faker::Date.forward(2), condition: 2, user_id: 1}])
 end
