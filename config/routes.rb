@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   root "home#index"
 
-  get '/login', to: 'login'
-  get '/logout', to: 'logout'
-  get '/register', to: 'register'
-  get '/movies', to: 'movies'
+  # get '/login', to: 'login'
+  # get '/logout', to: 'logout'
+  # get '/register', to: 'register'
 
 
-  resources :admin
-  resources :movies
-  resources :users
+  resources :admin, only: [:index]
+  resources :movies, only: [:index, :show]
+  resources :users, except: [:destroy]
 
   scope 'admin' do
     resources :movies
-    resources :users
+    resources :users, only: [:index, :show, :destroy]
   end
 
 end
