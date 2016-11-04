@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BretflixFinalproject</title>
+    <title>Bretflix</title>
+    <!-- Prevent cross-site request forgery -->
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+		<meta charset="utf-8">
+		<!-- Drop this if not intending to support IE 9 or earlier -->
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <!-- Enable responsive design -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">    
   </head>
 
   <body>
-    <%= yield %>
+  	<%= render "partials/navbar" %>
+  	<div class="container">
+    	<%= yield %>
+  	</div>
   </body>
 </html>
+
