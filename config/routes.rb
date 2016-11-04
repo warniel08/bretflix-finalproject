@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  root "home#index"
+  root "welcome#index"
 
   # get '/login', to: 'login'
   # get '/logout', to: 'logout'
