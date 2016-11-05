@@ -1,0 +1,28 @@
+body .container {
+  margin-top: 80px;
+  padding: 2em 2em;
+}
+
+nav {
+  padding: 20px 20px;
+  // height: 100px;
+  #logo {
+    height: 150px;
+    width: 150px;
+    margin-top: -25px;
+    margin-left: 10px;
+  }
+
+  #navbar-right {
+    margin-right: 10px;
+  }
+}
+
+.navbar-collapse {
+  width: 150px;
+  display: inline-block;
+}
+
+#welcome-header {
+  text-align: center;
+}
