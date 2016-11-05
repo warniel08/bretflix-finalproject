@@ -5,3 +5,4 @@
     <li><%= link_to "#{movie.title}", movie_path(movie) %></a></li>
   </ul>
 <% end %>
+<%= paginate @movies %>
