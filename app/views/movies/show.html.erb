@@ -1,0 +1,28 @@
+<h1>Movie Details</h1>
+
+<h2>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</h2>
+
+<p>
+  <strong>Year:</strong>
+  <%= @movie.year %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @movie.due_date %>
+</p>
+
+<p>
+  <strong># of checkouts:</strong>
+  <%= @movie.checkout_count %>
+</p>
+
+<%= link_to 'Back', movies_path %>
