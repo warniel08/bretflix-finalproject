@@ -9,12 +9,17 @@ class MoviesController < ApplicationController
   end
 
   def search
-  	p params
-		# hashtag = Hashtag.where(name: params[:keyword]).first
-  #   if hashtag
-  #     render json: hashtag.tweets.ordered_json
-  #   else
-  #     render :nothing => true, status: 404
-  #   end
+  	# selected = Movie.all where title contains params[:keyword]
+  	# Add pagination?
+		selected = Movie.where("title like ?", "%#{params[:keyword]}%")
+
+		p ("Here are selected")
+		p selected
+
+    # if selected
+      # render json: selected.ordered_json
+    # else
+    #   render :nothing => true, status: 404
+    # end
   end
 end
