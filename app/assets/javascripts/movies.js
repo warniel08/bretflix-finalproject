@@ -1,3 +1,13 @@
+function processMovies(arrayOfMovies){
+  var movieList = "<h1>Search Results by Keyword</h1>";
+
+  for (var i = 0; i < arrayOfMovies.length; i++) {
+    movieList +="<li>"+arrayOfMovies[i].title+"</li>";
+  };
+  $("#main-content").replaceWith(movieList);
+};
+
+
 $( document ).ready(function() {
 
 // Submits on enter
@@ -19,10 +29,9 @@ $( document ).ready(function() {
       datatype: "JSON"
     });
 
-    // promise.success(function(data){
-    //   console.log(data);
-    //   window.location.replace('movies/results/');
-    // });
+    promise.success(function(arrayOfMovies){
+      processMovies(arrayOfMovies);
+    });
 
     promise.fail(function(){
       console.log("Oops!")

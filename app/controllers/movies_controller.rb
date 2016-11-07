@@ -11,8 +11,6 @@ class MoviesController < ApplicationController
     if @movies.empty?
       render body: nil, status: 404
     else
-      p "+++++++++++++++++++++++++++++++++++++++++"
-      p @movies
       render json: @movies
     end
   end
