@@ -15,12 +15,21 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-collapse" id="navbar-collapse-1">
       <ul class="navbar-right" id="navbar-right">
-      <% if session[:logged_in] == true %>
-        <li><a href="/admin/index">Browse</a></li>
-        <li><a href="/admin/logout">Logout</a></li>
+      <!-- The Old stuff -->
+      <%# if session[:logged_in] == true %>
+        <!-- <li><a href="/admin/index">Browse</a></li>
+        <li><a href="/admin/logout">Logout</a></li> -->
+      <%# else %>
+        <!-- <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li> -->
+      <%# end %>
+      <!-- The New Stuff -->
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
       <% else %>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

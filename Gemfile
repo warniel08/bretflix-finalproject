@@ -42,6 +42,7 @@ group :development, :test do
   gem 'capybara'
   gem 'kaminari'
   gem 'rails-controller-testing'
+  gem 'devise'
 end
 
 group :development do
