@@ -16,5 +16,4 @@ class UsersController < ApplicationController
     end
 end
 
-# Couple of questions, why does it keep giving me the errors about first and last name being blank????????????
 # Why, when the errors appear does the route change to /users? and not stay on the registration page?????????????
