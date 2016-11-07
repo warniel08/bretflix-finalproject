@@ -4,22 +4,20 @@ class MoviesController < ApplicationController
     @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(10)
   end
 
-  def show
-    @movie = Movie.find(params[:id])
+  def search
+    @movies = Movie.where("title like ?", "%#{params[:keyword]}%").order(:title)
+    @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(10)
+
+    if @movies.empty?
+      render body: nil, status: 404
+    else
+      p "+++++++++++++++++++++++++++++++++++++++++"
+      p @movies
+      render json: @movies
+    end
   end
 
-  def search
-  	# selected = Movie.all where title contains params[:keyword]
-  	# Add pagination?
-		selected = Movie.where("title like ?", "%#{params[:keyword]}%")
-
-		p ("Here are selected")
-		p selected
-
-    # if selected
-      # render json: selected.ordered_json
-    # else
-    #   render :nothing => true, status: 404
-    # end
+  def show
+    @movie = Movie.find(params[:id])
   end
 end

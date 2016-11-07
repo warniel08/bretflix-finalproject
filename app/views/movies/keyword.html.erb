@@ -1,0 +1,10 @@
+<h1>Results for Keyword Search</h1>
+
+<div class="movie-list" >
+  <% @movies.each do |movie| %>
+    <ul>
+      <li><%= link_to "#{movie.title}", movie_path(movie) %></a></li>
+    </ul>
+  <% end %>
+</div>
+<%= paginate @movies %>
