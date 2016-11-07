@@ -13,13 +13,13 @@ $( document ).ready(function() {
     var $form = $(e.target)
     var keyword = $form.serializeArray()[0].value;
     console.log(keyword)
-    var searchURL = 'movies/search/'+ keyword
+    var searchURL = 'movies/search/'+keyword
     console.log(searchURL)
-    // var promise = $.ajax({
-    //   url: searchURL,
-    //   method: 'GET',
-    //   datatype: "JSON"
-    // });
+    var promise = $.ajax({
+      url: searchURL,
+      method: 'GET',
+      datatype: "JSON"
+    });
 
     // promise.done(function(arrayOfTweets){
     //   $("#tweets-container ul li").addClass("hidden")

@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
+  get 'movies/search/:keyword', to: 'movies#search'
+
+
   # get '/login', to: 'login'
   # get '/logout', to: 'logout'
   # get '/register', to: 'register'
