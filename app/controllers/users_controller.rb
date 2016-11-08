@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  def index
-    redirect_to '/movies'
+  def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -17,3 +17,4 @@ class UsersController < ApplicationController
 end
 
 # Why, when the errors appear does the route change to /users? and not stay on the registration page?????????????
+# Also, why does it mess up the formatting? Extra spaces between first and last names
