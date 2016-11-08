@@ -4,10 +4,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    p "========================================================"
     @user = User.create!(user_params)
 
     redirect_to 'users#index'
+  end
+
+  def edit
   end
 
   private
