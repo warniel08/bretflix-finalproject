@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :admin, only: [:index]
   resources :movies, only: [:index, :show]
-  resources :users, except: [:index, :destroy]
+  resources :users, except: [:index, :destroy, :show]
 
   resource :profile, except: [:new, :create, :destroy]
 
