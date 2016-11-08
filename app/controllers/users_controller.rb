@@ -3,10 +3,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new
-    @user = User.create!(user_params)
+   def new
+    @user = User.new(user_params)
 
-    redirect_to 'users#index'
+    @user.save
+    redirect_to '/movies'
   end
 
   private
