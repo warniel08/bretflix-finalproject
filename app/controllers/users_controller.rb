@@ -9,9 +9,6 @@ class UsersController < ApplicationController
     redirect_to 'users#index'
   end
 
-  def edit
-  end
-
   private
     def user_params
       params.required(:user).permit(:first_name, :last_name, :password, :email)
