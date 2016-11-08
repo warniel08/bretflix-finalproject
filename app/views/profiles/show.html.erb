@@ -1,0 +1,21 @@
+<h1>Hello <%= @user.first_name %></h1>
+
+<h3>Here is what you currently have checked out:</h3>
+<div>
+  <table>
+    <div id="user-movie-list-header">
+      <tr>
+        <th>Title</th>
+        <th>Due Date</th>
+      </tr>
+    </div>
+    <div id="user-movie-list-data">
+      <% @user.movies.each do |movie| %>
+        <tr>
+          <td><%= "#{movie.title}" %></td>
+          <td><%= "#{movie.due_date}" %></td>
+        </tr>
+      <% end %>
+    </div>
+  </table>
+</div>
