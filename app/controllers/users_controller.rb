@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    @movies = Movie.all.order(:title)
-  end
-
   def show
     @user = User.find(params[:id])
   end

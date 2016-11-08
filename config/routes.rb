@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :admin, only: [:index]
   resources :movies, only: [:index, :show]
-  resources :users, except: [:destroy]
+  resources :users, except: [:index, :destroy]
+
+  resource :profile, except: [:new, :create, :destroy]
 
   scope 'admin' do
     resources :movies
