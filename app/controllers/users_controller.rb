@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
-    # redirect_to 'users#show'
-    # redirect_to '/movies'
+    @movies = Movie.all.order(:title)
   end
 
   def show
@@ -9,9 +8,8 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new(user_params)
+    @user = User.create!(user_params)
 
-    @user.save
     redirect_to 'users#index'
   end
 

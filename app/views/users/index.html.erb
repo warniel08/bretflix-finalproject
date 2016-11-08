@@ -1,1 +1,10 @@
 <h1>Hello <%= current_user.first_name %></h1>
+
+<h3>Here is what you currently have checked out:</h3>
+<div class="user-movie-list">
+  <% @movies.each do |movie| %>
+      <ul>
+        <li><%= "#{movie.title}" %></li>
+      </ul>
+  <% end %>
+</div>
