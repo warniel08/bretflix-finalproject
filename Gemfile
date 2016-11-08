@@ -41,6 +41,7 @@ group :development, :test do
   gem 'kaminari'
   gem 'rails-controller-testing'
   gem 'devise'
+  gem 'foreman'
 end
 
 group :development do
