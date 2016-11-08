@@ -4,9 +4,10 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.create!(user_params)
+    @user = User.new(user_params)
 
-    redirect_to 'users#index'
+    @user.save
+    redirect_to '/movies'
   end
 
   private
