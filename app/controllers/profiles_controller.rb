@@ -4,7 +4,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    p params
     @user = current_user
   end
 
