@@ -10,15 +10,32 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    @movie.user = current_user
+    if @movie.user
+      check_in
+      render :checkin
+    else
+      @movie.user = current_user
+      check_out
+      render :checkout
+    end
+  end
+
+  private
+
+  def check_in
+    @movie.due_date = nil
+    @movie.user = nil
+    @movie.save!
+  end
+
+  def check_out
     @movie.checkout_count +=1
     @movie.due_date = get_due_date
     @movie.save!
   end
 
-  private
-
   def get_due_date
     Date.today + 7
   end
+
 end
