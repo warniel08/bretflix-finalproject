@@ -8,6 +8,18 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
+  def search
+    keyword = params[:movie][:keyword]
+    @movies = Movie.where("title like ?", "%#{keyword}%").order(:title)
+    @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(10)
+
+    if @movies.empty?
+      # render ?
+    else
+      render :keyword_search
+    end
+  end
+
   def update
     @movie = Movie.find(params[:id])
     if @movie.user
