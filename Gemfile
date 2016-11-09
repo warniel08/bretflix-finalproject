@@ -42,6 +42,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'devise'
   gem 'foreman'
+  gem 'dotenv-rails'
 end
 
 group :development do

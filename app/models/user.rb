@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :movies
-  validates_presence_of :first_name, :last_name, :password, :email
+  validates_presence_of :first_name, :last_name
 
   def is_admin?
-    self.password == ADMIN_PASSWORD
+    self.email == ENV["GMAIL_USERNAME"]
   end
 end
