@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
 
   def search
     @keyword = params[:movie][:keyword]
-    @movies = Movie.where("title like ?", "%#{@keyword}%").order(:title)
+    @movies = Movie.where("title ILIKE ?", "%#{@keyword}%").order(:title)
     @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(10)
 
     if @movies.empty?
