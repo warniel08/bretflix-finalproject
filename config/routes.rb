@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
+  get 'movies/search', :to => 'movies#search'
 
   root "welcome#index"
 
