@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates_presence_of :first_name, :last_name, :password, :email
 
   def is_admin?
-    self.email == ENV["GMAIL_USERNAME"]
+    if self
+      self.email == ENV["GMAIL_USERNAME"]
+    end
   end
 end

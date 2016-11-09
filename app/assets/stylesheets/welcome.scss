@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .search-form {
-  width:200px;
+  width:300px;
   margin:50px auto;
 }
 
@@ -28,10 +28,18 @@
 }
 
 
-.view-button {
+.search-button {
   border:2px solid #9b670d;
   background-color: #061e44;
   color:#fafafa;
-  width: 220px;
+  // width: 220px;
   height: 36px;
+}
+
+.text-box {
+  height: 36px;
+  border:2px solid #9b670d;
+  position:relative;
+  right: -5px;
+  vertical-align: bottom;
 }
