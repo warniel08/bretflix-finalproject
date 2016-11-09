@@ -7,7 +7,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     @user.save
-    redirect_to '/movies'
+    redirect_to 'profile_path'
+  end
+
+  def update
+    p "Hit the right route"
+    @user = User.find(params[:id])
+    # @user = current_user
+    @user.update_attributes!(user_params)
+    redirect_to profile_path
   end
 
   private
