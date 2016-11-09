@@ -1,5 +1,5 @@
 <h1>Edit your profile</h1>
-<%= form_for current_user do |f| %>
+<%= form_for current_user, method: :put do |f| %>
   <%= f.label :first_name %>:
   <%= f.text_field :first_name %><br />
 
@@ -8,6 +8,9 @@
 
   <%= f.label :email %>:
   <%= f.text_field :email %><br />
+
+  <%= f.label :password %>:
+  <%= f.password_field :password %><br />
 
   <%= f.submit %>
 <% end %>

@@ -10,6 +10,14 @@ class UsersController < ApplicationController
     redirect_to 'profile_path'
   end
 
+  def update
+    p "Hit the right route"
+    @user = User.find(params[:id])
+    # @user = current_user
+    @user.update_attributes!(user_params)
+    redirect_to profile_path
+  end
+
   private
     def user_params
       params.required(:user).permit(:first_name, :last_name, :password, :email)
