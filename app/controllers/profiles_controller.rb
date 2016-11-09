@@ -3,8 +3,10 @@ class ProfilesController < ApplicationController
     @user = current_user
   end
 
-  def edit
-    @user = current_user
+  def update
+    p "Hit the right route"
+
+    redirect_to "/profile"
   end
 
 end
