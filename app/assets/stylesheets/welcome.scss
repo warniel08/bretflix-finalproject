@@ -1,35 +1,37 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .search-form {
-  width:500px;
+  width:200px;
   margin:50px auto;
 }
 
-.searchfield-input {
-  padding:8px 15px;
+.form-textarea {
+  height: 36px;
+  vertical-align: bottom;
+  padding:5px 15px;
   background:rgba(50, 50, 50, 0.2);
   border:0px solid #061e44;
+  margin:0px 0px 0px 225px;;
 }
 
-.search-button {
+.form-submit {
   position:relative;
-  padding:6px 15px;
-  left:-8px;
+  height: 36px;
+  vertical-align: bottom;
+  padding:5px 15px;
+  position:relative;
+  left: -5px;
   border:2px solid #9b670d;
   background-color: #061e44;
   color:#fafafa;
 }
-.search-button:hover  {
-  background-color:#fafafa;
-  color: #061e44;
-}
+
 
 .view-button {
   border:2px solid #9b670d;
   background-color: #061e44;
   color:#fafafa;
   width: 220px;
-  height: 30px;
+  height: 36px;
 }
