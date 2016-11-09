@@ -1,9 +1,9 @@
 <h1 id='welcome-header'>Welcome to BretFlix!</h1>
 
 <%= form_for :movie, url: movies_search_url, method: :get do |f| %>
-  <%= f.label :keyword %><br>
-  <%= f.text_area :keyword %>
-  <%= f.submit %>
+  <%= f.label '', class: 'form-label' %><br>
+  <%= f.text_area :keyword, class: 'form-textarea', placeholder: 'Search by Keyword' %>
+  <%= f.submit "Search", class: 'form-submit' %>
 <% end %>
 
 <!-- <form class="search-form" action=movies/search>
