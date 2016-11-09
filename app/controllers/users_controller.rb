@@ -11,11 +11,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    p "Hit the right route"
-    @user = User.find(params[:id])
-    # @user = current_user
-    @user.update_attributes!(user_params)
-    redirect_to profile_path
   end
 
   private
@@ -24,5 +19,3 @@ class UsersController < ApplicationController
     end
 end
 
-# Why, when the errors appear does the route change to /users? and not stay on the registration page?????????????
-# Also, why does it mess up the formatting? Extra spaces between first and last names
