@@ -10,8 +10,6 @@ class MoviesController < ApplicationController
 
   def checked_out
     @checked_out = Movie.includes(:user).where("user_id != 0").order("users.last_name")
-    # p @checked_out.all.order(:last_name)
-    # p @checked_out.first.user.last_name
     render :checked_out_list
   end
 

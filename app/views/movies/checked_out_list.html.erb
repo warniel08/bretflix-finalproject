@@ -15,6 +15,9 @@
 		      <td><%= "#{movie.user.full_name}" %></td>
 		      <td><%= link_to "#{movie.title}", movie_path(movie) %></td>
 		      <td><%= "#{movie.due_date}" %></td>
+		      <td><% if current_user && current_user.is_admin? %>
+		      	<%= button_to "Check In", "/admin/movies/#{movie.id}", method: :put %>
+		      <% end %></td>
 		    </tr>
 		  <% end %>
 	  </div>
