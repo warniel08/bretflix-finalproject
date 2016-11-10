@@ -3,8 +3,11 @@
 <div class="user-list">
   <% @users.each do |user| %>
     <ul>
-      <li><%= link_to "#{user.full_name}", "users/#{user.id}"%></a></li>
+      <li><%= link_to "#{user.full_name_reversed}", "users/#{user.id}"%></a></li>
     </ul>
   <% end %>
 </div>
+
+<%= link_to 'Back', admin_index_path %>
+
 

@@ -27,7 +27,10 @@
   </table>
 </div>
 
-<%= form_for :user, url: "#{@user.id}", method: :delete do |f| %>
+<%= form_for :user, url: "#{@user.id}", method: :delete, data: { confirm: "Delete #{@user.full_name}?" }  do |f| %>
   <%= f.submit "Delete User", class: 'form-submit' %>
 <% end %>
+
+<%= link_to 'Back', admin_index_path %>
+
 
