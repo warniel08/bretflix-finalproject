@@ -9,5 +9,15 @@
   <input class="search-button" type="submit" value="   View the Entire Collection   " />
 </form>
 
+<h2 class="bretflix-blue">Most Popular Titles</h2>
+<div class="movie-list">
+  <% top_picks = Movie.all.order(:checkout_count).limit(5)%>
+  <% top_picks.each do |movie| %>
+    <ul>
+      <li><%= link_to "#{movie.title}", movie_path(movie) %></a></li>
+    </ul>
+  <% end %>
+</div>
+
 
 
