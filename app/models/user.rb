@@ -12,4 +12,8 @@ class User < ApplicationRecord
       self.email == ENV["GMAIL_USERNAME"]
     end
   end
+
+  def full_name
+    self.last_name.concat(", ") + self.first_name
+  end
 end
