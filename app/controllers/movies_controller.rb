@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all.order(:title)
-    @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(10)
+    @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(15)
   end
 
   def show
@@ -30,6 +30,12 @@ class MoviesController < ApplicationController
       check_out
       render :checkout
     end
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy!
+    redirect_to admin_index_path
   end
 
   private

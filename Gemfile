@@ -31,8 +31,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'dotenv-rails', :groups => [:development, :test]
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -44,6 +42,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'devise'
   gem 'foreman'
+  gem 'dotenv-rails'
+  gem 'httparty'
 end
 
 group :development do
