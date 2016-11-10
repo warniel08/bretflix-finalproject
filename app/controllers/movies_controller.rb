@@ -32,6 +32,12 @@ class MoviesController < ApplicationController
     end
   end
 
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy!
+    redirect_to admin_index_path
+  end
+
   private
 
   def check_in

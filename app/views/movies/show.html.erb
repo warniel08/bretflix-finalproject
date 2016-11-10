@@ -26,10 +26,13 @@
 </p>
 
 <% if current_user %>
-  <%if !@movie.checked_out? %>
+  <%if current_user.is_admin?%>
+    <%= button_to "Delete Movie", "/admin/movies/#{@movie.id}", method: :delete, data: { confirm: "Delete #{@movie.title}?" } %>
+    <%if @movie.checked_out? %>
+      <%= button_to "Check In", "/admin/movies/#{@movie.id}", method: :put %>
+    <% end %>
+  <%elsif !@movie.checked_out? %>
     <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put %>
-  <% elsif @movie.user == current_user%>
-    <%= button_to "Check In", "/admin/movies/#{@movie.id}", method: :put %>
   <% end %>
 <% end %>
 
