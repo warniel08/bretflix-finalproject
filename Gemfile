@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'httparty'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,7 +39,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'kaminari'
   gem 'rails-controller-testing'
   gem 'foreman'
   gem 'dotenv-rails'
