@@ -1,3 +1,6 @@
+require 'httparty'
+require 'json'
+
 class Movie < ApplicationRecord
 
   belongs_to :user, optional: true
@@ -19,8 +22,13 @@ class Movie < ApplicationRecord
 
     i = 0
     while i < title_data.length do
-      Movie.find_or_create_by(title: title_data[i], year: year_data[i], description: tt_data[i], checkout_count: 0)
+      response = HTTParty.get("http://www.omdbapi.com/?i=#{tt_data[i]}&plot=short&r=json")
+      data = JSON.parse(response.body)
+      puts data["Plot"]
+      Movie.find_or_create_by(title: title_data[i], year: year_data[i], description: data["Plot"], checkout_count: 0)
       i +=1
     end
+
   end
 end
+
