@@ -5,21 +5,16 @@ body .container {
 
 nav {
   padding: 20px 20px;
-  // height: 100px;
   #logo {
     height: 150px;
     width: 150px;
-    margin-top: -25px;
+    margin-top: -50px;
     margin-left: 10px;
-  }
-
-  #navbar-right {
-    margin-right: 10px;
   }
 }
 
 .bretflix-blue {
-  color: #061e44;
+  color: #153b77
 }
 
 .navbar-collapse {
@@ -29,7 +24,7 @@ nav {
 
 .welcome-header {
   text-align: center;
-  color: #061e44;
+  color: #0b295b;
 }
 
 .search-form {
@@ -39,11 +34,19 @@ nav {
 
 .search-button {
   border:2px solid #9b670d;
-  background-color: #061e44;
+  background-color: #0b295b;
   color:#fafafa;
-  // width: 220px;
   height: 36px;
 }
+
+.bret-button {
+  border:2px solid #9b670d;
+  background-color: #0b295b;
+  color:#fafafa;
+  width: 220px;
+  height: 36px;
+}
+
 
 .text-box {
   height: 36px;
@@ -51,4 +54,30 @@ nav {
   position:relative;
   right: -5px;
   vertical-align: bottom;
+}
+
+@media only screen and (max-width : 768px) {
+  #logo {
+    display: none;
+  }
+}
+.movie-user-list {
+  padding-bottom: 1em;
+}
+
+h1, h2, h3 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #153b77
+}
+
+table {
+  border-spacing: 10px;
+  border-collapse: separate;
+  padding-bottom: 1em;
+}
+
+a:link {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

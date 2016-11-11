@@ -1,16 +1,15 @@
 <h1>Hello <%= @user.first_name %></h1>
 
+<div class="edit-button" id='profile-selector'>
+  <%= button_to "Edit Your Profile", edit_user_registration_path, method: :get, class: 'bret-button' %>
+</div>
+
 <h3>Your profile:</h3>
 <div>
   <p>First Name: <%= @user.first_name %></p>
   <p>Last Name: <%= @user.last_name %></p>
   <p>Email: <%= @user.email %></p>
 </div>
-
-  <div class="edit-button" id='profile-selector'>
-    <p><strong>Edit your email or password:</strong></p>
-    <%= button_to "Edit", edit_user_registration_path, method: :get %>
-  </div>
 
 <h3>Here is what you currently have checked out:</h3>
 <div>
@@ -21,7 +20,7 @@
         <th>Due Date</th>
       </tr>
     </div>
-    <div id="user-movie-list-data">
+    <div class="movie-user-list">
       <% @user.movies.each do |movie| %>
         <tr>
           <td><%= "#{movie.title}" %></td>

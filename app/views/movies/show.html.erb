@@ -28,13 +28,15 @@
 
 <% if current_user %>
   <%if current_user.is_admin?%>
-    <%= button_to "Delete Movie", "/admin/movies/#{@movie.id}", method: :delete, data: { confirm: "Delete #{@movie.title}?" } %>
+    <%= button_to "Delete Movie", "/admin/movies/#{@movie.id}", method: :delete, class: 'bret-button', data: { confirm: "Delete #{@movie.title}?"} %>
     <%if @movie.checked_out? %>
-      <%= button_to "Check In", "/admin/movies/#{@movie.id}", method: :put %>
+      <br>
+      <%= button_to "Check In", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
     <% end %>
   <%elsif !@movie.checked_out? %>
-    <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put %>
+    <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
   <% end %>
 <% end %>
 
+<br>
 <%= link_to 'Back', request.referrer %>
