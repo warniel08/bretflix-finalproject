@@ -1,3 +1,5 @@
+require_relative 'movies_controller'
+
 class UsersController < ApplicationController
 
   def index
@@ -16,8 +18,13 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy!
-    redirect_to admin_index_path
+    @checked_out = Movie.includes(:user).where("user_id = #{@user.id}")
+    if @checked_out.empty?
+      @user.destroy!
+      redirect_to admin_index_path
+    else
+      render :outstanding_checkouts
+    end
   end
 
   private
