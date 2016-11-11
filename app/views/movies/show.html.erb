@@ -28,6 +28,9 @@
     <%if @movie.checked_out? %>
       <br>
       <%= button_to "Check In", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
+    <%elsif !@movie.checked_out? %>
+      <br>
+      <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
     <% end %>
   <%elsif !@movie.checked_out? %>
     <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
