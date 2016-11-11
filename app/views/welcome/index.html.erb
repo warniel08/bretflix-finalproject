@@ -9,6 +9,9 @@
   <input class="bret-button" type="submit" value="View the Entire Collection" />
 </form>
 
+<% if current_user && current_user.is_admin? %>
+	<%= link_to "Admin Home", admin_index_path %>
+<% end %>
 
 <h2 class="bretflix-blue">Most Popular Titles</h2>
 <div class="movie-list">

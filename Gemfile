@@ -28,8 +28,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'devise'
+gem 'httparty'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,12 +39,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'kaminari'
   gem 'rails-controller-testing'
-  gem 'devise'
   gem 'foreman'
   gem 'dotenv-rails'
-  gem 'httparty'
 end
 
 group :development do
