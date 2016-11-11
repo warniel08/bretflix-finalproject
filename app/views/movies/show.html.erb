@@ -16,10 +16,6 @@
   <%= @movie.description %>
 </p>
 
-<p>
-  <strong>Due date:</strong>
-  <%= @movie.due_date %>
-</p>
 
 <p>
   <strong># of checkouts:</strong>
@@ -38,7 +34,9 @@
     <% end %>
   <%elsif !@movie.checked_out? %>
     <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
-  <% end %>
+  <%else%>
+    <h3>Title will be available for checkout on <%= @movie.due_date %></h3>
+  <% end %>  
 <% end %>
 
 <br>
