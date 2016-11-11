@@ -1,6 +1,6 @@
-<h1>List of Users</h1>
+<h1 class="bretflix-blue">List of Users</h1>
 
-<div class="user-list">
+<div class="movie-user-list">
   <% @users.each do |user| %>
     <ul>
       <li><%= link_to "#{user.full_name_reversed}", "users/#{user.id}"%></a></li>

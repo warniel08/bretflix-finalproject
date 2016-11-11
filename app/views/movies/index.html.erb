@@ -1,6 +1,6 @@
-<h1>List of Movies</h1>
+<h1 class='bretflix-blue'>List of Movies</h1>
 
-<div class="movie-list">
+<div class="movie-user-list">
   <% @movies.each do |movie| %>
     <ul>
       <li><%= link_to "#{movie.title}", movie_path(movie) %></a></li>
@@ -10,5 +10,9 @@
 <%= paginate @movies %>
 
 <div>
-	<%= link_to "Home", '/' %>
+  <% if current_user && current_user.is_admin?%>
+    <%= link_to 'Home', admin_index_path %>
+  <%else %>
+    <%= link_to 'Home', root_path %>
+  <% end %>
 </div>
