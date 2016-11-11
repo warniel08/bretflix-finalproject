@@ -1,0 +1,29 @@
+<h1>List of checked out movies</h1>
+
+<div class="checked-out-movie-list">
+	<table>
+		<div id="checked-out-movie-list-header">
+			<tr>
+				<th>Name</th>
+				<th>Title</th>
+				<th>Due Date</th>
+			</tr>
+		</div>
+		<div id="checked-out-movie-list-data">
+		  <% @checked_out.each do |movie| %>
+		    <tr>
+		      <td><%= "#{movie.user.full_name}" %></td>
+		      <td><%= link_to "#{movie.title}", movie_path(movie) %></td>
+		      <td><%= "#{movie.due_date}" %></td>
+		      <td><% if current_user && current_user.is_admin? %>
+		      	<%= button_to "Check In", "/admin/movies/#{movie.id}", method: :put %>
+		      <% end %></td>
+		    </tr>
+		  <% end %>
+	  </div>
+  </table>
+</div>
+
+<div>
+	<%= link_to "Home", admin_index_path %>
+</div>

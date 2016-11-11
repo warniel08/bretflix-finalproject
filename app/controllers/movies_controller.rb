@@ -8,6 +8,11 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
+  def checked_out
+    @checked_out = Movie.includes(:user).where("user_id != 0").order("users.last_name")
+    render :checked_out_list
+  end
+
   def search
     @keyword = params[:movie][:keyword]
     @movies = Movie.where("title ILIKE ?", "%#{@keyword}%").order(:title)
