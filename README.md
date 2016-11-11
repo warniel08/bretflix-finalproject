@@ -1,24 +1,3 @@
-# README
+# BretFlix
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A movie checkout managment app intended for my father-in-law to keep track of family and friends that borrow from his extensive movie collection.
