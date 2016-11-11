@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
   def index
     @movies = Movie.all.order(:title)
     @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(15)
@@ -42,8 +43,6 @@ class MoviesController < ApplicationController
     @movie.destroy!
     redirect_to admin_index_path
   end
-
-  private
 
   def check_in
     @movie.due_date = nil
