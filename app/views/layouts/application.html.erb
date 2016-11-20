@@ -11,12 +11,14 @@
     <!-- Drop this if not intending to support IE 9 or earlier -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Enable responsive design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   </head>
 
   <body>
-    <%= render "partials/navbar" %>
-    <div id="main-content" class="container">
+    <div class="navbar">
+      <%= render "partials/navbar" %>
+    </div>
+    <div id="main" class="container">
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
       <% end %>
@@ -25,6 +27,29 @@
       <% end %>
       <%= yield %>
     </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+            <h6>Copyright &copy; 2016 WNKG</h6>
+          </div><!-- end col-sm-2 -->
+          <div class="col-sm-6">
+            <h6>About Bretflix</h6>
+            <p>Bretflix is a service provided to you by Bret Bassett for your movie viewing pleasure. Please remember to return all discs checked out in a timely manner so others may enjoy Bretflix. Enjoy!</p>
+          </div><!-- end col-sm-6 -->
+          <div class="col-sm-2">
+            <h6>Navigation</h6>
+            <ul class="list-unstyled">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+          </div><!-- end col-sm-2 -->
+          <div class="col-sm-2">
+            <h6>Coded with <span class="glyphicon glyphicon-heart"></span> by Warner and Katherine</h6>
+          </div><!-- end col-sm-2 -->
+        </div><!-- end row -->
+      </div><!-- end container -->
+    </footer>
   </body>
 </html>
 

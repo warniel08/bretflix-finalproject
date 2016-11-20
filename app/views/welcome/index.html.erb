@@ -1,23 +1,39 @@
-<h1 class="welcome-header">Welcome to BretFlix!</h1>
+<div class="well">
+	<div class="page-header">
+		<h1 class="welcome-header">Welcome to BretFlix! <small>For all your movie checkout needs.</small></h1>
+	</div><!-- end page-header -->
 
-<form class="search-form" action=movies/search method="get">
-  <input class="text-box" type="text" placeholder="Search title by keyword" name="movie[keyword]" required>
-  <input class="search-button" type="submit" value="Search" />
-</form>
+	<p class="lead">Browse through the entire collection by selecting the button below, or search by keyword in the search bar above.</p>
 
-<form class="search-form" action=movies>
-  <input class="bret-button" type="submit" value="View the Entire Collection" />
-</form>
+	<form class="search-form" action=movies>
+	  <input class="btn btn-lg btn-primary" id="entire-collection" type="submit" value="View the Entire Collection" />
+	</form>
 
-<% if current_user && current_user.is_admin? %>
-	<%= link_to "Admin Home", admin_index_path %>
-<% end %>
+	<% if current_user && current_user.is_admin? %>
+		<%= link_to "Admin Home", admin_index_path, class: "btn btn-lg btn-link" %>
+	<% end %>
+</div><!-- end well -->
 
-<h2 class="bretflix-blue">Most Popular Titles</h2>
-<div class="movie-list">
-  <% @movies.each do |movie| %>
-    <ul>
-      <li><%= link_to "#{movie.title}", movie_path(movie) %></a></li>
-    </ul>
-  <% end %>
-</div>
+<div class="row" id="featuresHeading">
+	<div class="col-12">
+		<h2>Most Popular Titles</h2>
+		<p class="lead">Here's a list of the top 5 most checked out movies from Bretflix:</p>
+	</div><!-- end col-12 -->
+</div><!-- end featuresHeading -->
+
+<div class="row" id="features">
+	<div class="col-sm-4 feature">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title text-center">Movie Titles</h3>
+			</div><!-- end panel-heading -->
+			<div class="panel-body">
+				<% @movies.each do |movie| %>
+				  <ul class="list-unstyled">
+				    <li><%= link_to "#{movie.title}", movie_path(movie) %></a></li>
+				  </ul>
+				<% end %>
+			</div><!-- end panel-body -->
+		</div><!-- end panel -->
+	</div><!-- end feature -->
+</div><!-- end features -->

@@ -1,11 +1,69 @@
 /**{outline: 1px solid red;}*/
 
-body .container {
-  margin-top: 80px;
-  padding: 2em 2em;
+body {
+   -webkit-font-smoothing: antialiased;
+   text-rendering: optimizelegibility;
 }
 
-nav {
+#logo {
+  margin: -20px 0 0 0;
+}
+
+a.dropdown-toggle {
+  color: #153b77
+}
+
+#searchInput {
+   width: 200px;
+}
+
+.alert {
+  
+}
+
+.btn-default {
+  border:2px solid #9b670d;
+  background-color: #153b77;
+}
+
+.glyphicon-search {
+  color: #eee;
+}
+
+.welcome-header {
+  color: #0b295b;
+  margin-top: -35px;
+}
+
+#entire-collection {
+  background-color: #0b295b;
+  border:2px solid #9b670d;
+  color: #eee;
+}
+
+.well {
+  margin: 10px 0;
+}
+
+div#featuresHeading {
+  padding-left: 15px;
+  color: #0b295b;
+}
+
+footer {
+   background: #333;
+   color: #eee;
+   font-size: 11px;
+   padding: 20px;
+}
+
+
+/*body .container {
+  margin-top: 80px;
+  padding: 2em 2em;
+}*/
+
+/*nav {
   padding: 20px 20px;
   #logo {
     height: 150px;
@@ -13,77 +71,86 @@ nav {
     margin-top: -50px;
     margin-left: 10px;
   }
-}
+}*/
 
-.bretflix-blue {
+/*.bretflix-blue {
   color: #153b77
-}
+}*/
 
-.navbar-collapse {
+/*.navbar-collapse {
   width: 150px;
   display: inline-block;
-}
+}*/
 
-.welcome-header {
+/*.welcome-header {
   text-align: center;
   color: #0b295b;
-}
+}*/
 
-.search-form {
+/*.search-form {
   width:300px;
   margin:30px auto;
-}
+}*/
 
-.search-button {
+/*.search-button {
   border:2px solid #9b670d;
   background-color: #0b295b;
   color:#fafafa;
   height: 36px;
-}
+  border-radius: 0px 10px 10px 0px;
+}*/
 
-.bret-button {
+/*.bret-button {
   border:2px solid #9b670d;
   background-color: #0b295b;
   color:#fafafa;
   width: 220px;
   height: 36px;
-}
+  border-radius: 10px;
+}*/
+
+/*.btn-collection {
+  border:2px solid #9b670d;
+  background-color: #0b295b;
+}*/
 
 
-.text-box {
+/*.text-box {
   height: 36px;
   border:2px solid #9b670d;
   position:relative;
   right: -5px;
   vertical-align: bottom;
-}
+  border-radius: 10px 0px 0px 10px;
+}*/
 
-@media only screen and (max-width : 310px) {
+/*@media only screen and (max-width : 310px) {
   #logo {
     display: none;
   }
-}
-.movie-user-list {
-  padding-bottom: 1em;
-}
+}*/
 
-h1, h2, h3 {
+/*.movie-user-list {
+  padding-bottom: 1em;
+}*/
+
+/*h1, h2, h3 {
   padding-bottom: 10px;
   padding-top: 10px;
   color: #153b77
-}
+}*/
 
-table {
+/*table {
   border-spacing: 10px;
   border-collapse: separate;
   padding-bottom: 1em;
-}
+}*/
 
-a:link {
+/*a:link {
   padding-top: 10px;
   padding-bottom: 10px;
-}
+}*/
 
-.navbar-link {
+/*.navbar-link {
   width: 216px;
-}
+}*/
