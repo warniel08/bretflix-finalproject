@@ -1,4 +1,6 @@
-<h1>Movie Details</h1>
+<h1 class="bretflix-blue">Movie Details</h1>
+
+<img src="<%= @movie.poster %>" width="150" height="220" alt="<%= @movie.title %>">
 
 <h2>
   <strong>Title:</strong>
@@ -16,6 +18,10 @@
   <%= @movie.description %>
 </p>
 
+<p>
+  <strong>IMDB Rating:</strong>
+  <%= @movie.imdbrating %>
+</p>
 
 <p>
   <strong># of checkouts:</strong>

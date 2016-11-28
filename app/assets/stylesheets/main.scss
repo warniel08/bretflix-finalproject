@@ -17,13 +17,14 @@ a.dropdown-toggle {
    width: 200px;
 }
 
-.alert {
-  
-}
-
 .btn-default {
   border:2px solid #9b670d;
   background-color: #153b77;
+}
+
+.search-button:hover {
+  background-color: #9b670d;
+  border:2px solid #153b77;
 }
 
 .glyphicon-search {
@@ -31,8 +32,12 @@ a.dropdown-toggle {
 }
 
 .welcome-header {
-  color: #0b295b;
   margin-top: -35px;
+  font-family: 'Fascinate Inline', cursive;
+}
+
+.small-welcome-header {
+  font-family: base;
 }
 
 #entire-collection {
@@ -42,12 +47,11 @@ a.dropdown-toggle {
 }
 
 .well {
-  margin: 10px 0;
+  margin-top: 30px;
 }
 
 div#featuresHeading {
   padding-left: 15px;
-  color: #0b295b;
 }
 
 footer {
@@ -55,8 +59,24 @@ footer {
    color: #eee;
    font-size: 11px;
    padding: 20px;
+   margin-top: 10px;
 }
 
+.movie-list-title {
+  padding: 10px 0;
+}
+
+.bretflix-blue {
+  color: #0b295b;
+}
+
+.alert {
+  margin-top: 30px;
+}
+
+.panel {
+  margin-right: 15px;
+}
 
 /*body .container {
   margin-top: 80px;
@@ -73,9 +93,6 @@ footer {
   }
 }*/
 
-/*.bretflix-blue {
-  color: #153b77
-}*/
 
 /*.navbar-collapse {
   width: 150px;

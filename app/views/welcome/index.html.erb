@@ -1,6 +1,6 @@
 <div class="well">
 	<div class="page-header">
-		<h1 class="welcome-header">Welcome to BretFlix! <small>For all your movie checkout needs.</small></h1>
+		<h1 class="welcome-header bretflix-blue"><strong>Welcome to BretFlix</strong> <small class="small-welcome-header">For all your movie checkout needs</small></h1>
 	</div><!-- end page-header -->
 
 	<p class="lead">Browse through the entire collection by selecting the button below, or search by keyword in the search bar above.</p>
@@ -14,26 +14,42 @@
 	<% end %>
 </div><!-- end well -->
 
-<div class="row" id="featuresHeading">
-	<div class="col-12">
+<div class="row bretflix-blue" id="featuresHeading">
+	<div class="col-sm-6">
 		<h2>Most Popular Titles</h2>
-		<p class="lead">Here's a list of the top 5 most checked out movies from Bretflix:</p>
-	</div><!-- end col-12 -->
+		<p class="lead">Top 5 most checked out movies from Bretflix:</p>
+	
+		<div class="row" id="features">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Movie Titles</h3>
+				</div><!-- end panel-heading -->
+				<div class="list-group panel-list">
+					<% @movies.each do |movie| %>
+					    <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>" > - <%= movie.title %></a>
+					<% end %>
+				</div><!-- end panel-body -->
+			</div><!-- end panel -->
+		</div><!-- end feature -->
+	</div><!-- end col-sm-6 -->
+
+	<div class="col-sm-6">
+		<h2>This is a test</h2>
+		<p class="lead">This is a test for the spacing of this info</p>
+
+		<div class="row" id="features">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Movie Titles</h3>
+				</div><!-- end panel-heading -->
+				<div class="list-group panel-list">
+					<% @movies.each do |movie| %>
+					    <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>" > - <%= movie.title %></a>
+					<% end %>
+				</div><!-- end panel-body -->
+			</div><!-- end panel -->
+		</div><!-- end feature -->
+	</div><!-- end col-sm-6 -->
 </div><!-- end featuresHeading -->
 
-<div class="row" id="features">
-	<div class="col-sm-4 feature">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title text-center">Movie Titles</h3>
-			</div><!-- end panel-heading -->
-			<div class="panel-body">
-				<% @movies.each do |movie| %>
-				  <ul class="list-unstyled">
-				    <li><%= link_to "#{movie.title}", movie_path(movie) %></a></li>
-				  </ul>
-				<% end %>
-			</div><!-- end panel-body -->
-		</div><!-- end panel -->
-	</div><!-- end feature -->
-</div><!-- end features -->
+

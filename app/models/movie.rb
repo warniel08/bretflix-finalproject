@@ -24,7 +24,7 @@ class Movie < ApplicationRecord
     while i < title_data.length do
       response = HTTParty.get("http://www.omdbapi.com/?i=#{tt_data[i]}&plot=short&r=json")
       data = JSON.parse(response.body)
-      Movie.find_or_create_by(title: title_data[i], year: year_data[i], description: data["Plot"], checkout_count: 0)
+      Movie.find_or_create_by(title: title_data[i], year: year_data[i], description: data["Plot"], poster: data["Poster"], imdbrating: data["imdbRating"], checkout_count: 0)
       i +=1
     end
 

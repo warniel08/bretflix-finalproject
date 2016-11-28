@@ -23,7 +23,7 @@
     <div class="movie-user-list">
       <% @user.movies.each do |movie| %>
         <tr>
-          <td><%= "#{movie.title}" %></td>
+          <td><%= "#{movie.title}" %></td>   <!-- ***ADD SOMETHING THAT WILL SORT THIS BY DATE DUE*** -->
           <td><%= "#{movie.due_date}" %></td>
         </tr>
       <% end %>

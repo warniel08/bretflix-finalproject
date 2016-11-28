@@ -1,13 +1,12 @@
-<h1>Matches for '<%=@keyword%>'</h1>
+<h1 class="col-12">Matches for '<%=@keyword%>'</h1>
 
-<div class="movie-list">
+<div class="col-sm-6 movie-list">
   <% @movies.each do |movie| %>
     <ul>
-      <li><%= link_to "#{movie.title}", movie_path(movie) %></a></li>
+      <li class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>"> <%= link_to "#{movie.title}", movie_path(movie) %></a></li>
     </ul>
   <% end %>
-</div>
 <%= paginate @movies %>
 
 <%= link_to 'Home', root_path %>
-
+</div>
