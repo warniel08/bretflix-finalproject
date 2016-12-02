@@ -5,6 +5,22 @@ body {
    text-rendering: optimizelegibility;
 }
 
+#main.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: -1px;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.navbar-inverse {
+  background-color: #0b295b;
+}
+
+.nav.navbar-nav li a {
+  color: #e6c40b;
+}
+
 #logo {
   margin: -20px 0 0 0;
 }
@@ -19,7 +35,7 @@ a.dropdown-toggle {
 
 .btn-default {
   border:2px solid #9b670d;
-  background-color: #153b77;
+  background-color: #0b295b;
 }
 
 .search-button:hover {
@@ -40,10 +56,18 @@ a.dropdown-toggle {
   font-family: base;
 }
 
-#entire-collection {
+.btn-primary {
   background-color: #0b295b;
   border:2px solid #9b670d;
   color: #eee;
+}
+
+.remember-me {
+  padding: 10px 0;
+}
+
+.password-field {
+  padding: 10px 0;
 }
 
 .well {
@@ -54,15 +78,27 @@ div#featuresHeading {
   padding-left: 15px;
 }
 
-footer {
-   background: #333;
+#myFooter {
+   background: #0b295b;
    color: #eee;
    font-size: 11px;
    padding: 20px;
    margin-top: 10px;
 }
 
+#myFooter a {
+  color: #e6c40b;
+}
+
 .movie-list-title {
+  padding: 10px 0;
+}
+
+.movie-detail-title {
+  padding: 10px 0;
+}
+
+.movie-matches-title {
   padding: 10px 0;
 }
 
@@ -76,6 +112,14 @@ footer {
 
 .panel {
   margin-right: 15px;
+}
+
+.user-details {
+  padding: 10px 0;
+}
+
+.login {
+  padding: 10px 0;
 }
 
 /*body .container {

@@ -1,4 +1,4 @@
-<h1>Details for <%= @user.full_name%></h1>
+<h1 class="user-deatils">Details for <%= @user.full_name%></h1>
 
 <%= form_for :user, url: "#{@user.id}", method: :delete, data: { confirm: "Delete #{@user.full_name}?" }  do |f| %>
   <%= f.submit "Delete User", class: 'search-button' %>
