@@ -33,23 +33,6 @@
 		</div><!-- end feature -->
 	</div><!-- end col-sm-6 -->
 
-	<div class="col-sm-6">
-		<h2>This is a test</h2>
-		<p class="lead">This is a test for the spacing of this info</p>
-
-		<div class="row" id="features">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title text-center">Movie Titles</h3>
-				</div><!-- end panel-heading -->
-				<div class="list-group panel-list">
-					<h4><% @movies.each do |movie| %>
-					    <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>" > - <%= movie.title %></a>
-					<% end %></h4>
-				</div><!-- end panel-body -->
-			</div><!-- end panel -->
-		</div><!-- end feature -->
-	</div><!-- end col-sm-6 -->
 </div><!-- end featuresHeading -->
 
 
