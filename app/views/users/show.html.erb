@@ -1,4 +1,4 @@
-<h1>Details for <%= @user.full_name%></h1>
+<h1 class="user-deatils">Details for <%= @user.full_name%></h1>
 
 <%= form_for :user, url: "#{@user.id}", method: :delete, data: { confirm: "Delete #{@user.full_name}?" }  do |f| %>
   <%= f.submit "Delete User", class: 'search-button' %>
@@ -23,7 +23,7 @@
     <div class="movie-user-list">
       <% @user.movies.each do |movie| %>
         <tr>
-          <td><%= "#{movie.title}" %></td>
+          <td><%= "#{movie.title}" %></td>   <!-- ***ADD SOMETHING THAT WILL SORT THIS BY DATE DUE*** -->
           <td><%= "#{movie.due_date}" %></td>
         </tr>
       <% end %>
