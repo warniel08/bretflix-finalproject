@@ -25,7 +25,7 @@
 					<h3 class="panel-title text-center">Movie Titles</h3>
 				</div><!-- end panel-heading -->
 				<div class="list-group panel-list">
-					<h4><% @checked_out.each do |movie| %>
+					<h4><% @checked_out_movies.each do |movie| %>
 					    <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>" > <%= movie.title %></a>
 					<% end %></h4>
 				</div><!-- end panel-body -->

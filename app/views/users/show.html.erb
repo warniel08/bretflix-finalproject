@@ -1,38 +1,38 @@
 <h1 class="user-deatils">Details for <%= @user.full_name%></h1>
 
 <%= form_for :user, url: "#{@user.id}", method: :delete, data: { confirm: "Delete #{@user.full_name}?" }  do |f| %>
-  <%= f.submit "Delete User", class: 'search-button' %>
+  <%= f.submit "Delete User", class: 'search-button btn btn-primary' %>
 <% end %>
+<hr>
+<div class="container">
+  <h3 class="show">Profile:</h3>
+    <div>
+      <p>First Name: <%= @user.first_name %></p>
+      <p>Last Name: <%= @user.last_name %></p>
+      <p>Email: <%= @user.email %></p>
+    </div>
 
-<h3>Profile:</h3>
+  <h3>Currently checked out:</h3>
   <div>
-    <p>First Name: <%= @user.first_name %></p>
-    <p>Last Name: <%= @user.last_name %></p>
-    <p>Email: <%= @user.email %></p>
-  </div>
-
-<h3>Currently checked out:</h3>
-<div>
-  <table>
-    <div id="user-movie-list-header">
-      <tr>
-        <th>Title</th>
-        <th>Due Date</th>
-      </tr>
-    </div>
-    <div class="movie-user-list">
-      <% @user.movies.each do |movie| %>
+    <table>
+      <div id="user-movie-list-header">
         <tr>
-          <td><%= "#{movie.title}" %></td>   <!-- ***ADD SOMETHING THAT WILL SORT THIS BY DATE DUE*** -->
-          <td><%= "#{movie.due_date}" %></td>
+          <th>Title</th>
+          <th>Due Date</th>
         </tr>
-      <% end %>
-    </div>
-  </table>
+      </div>
+      <div class="movie-user-list">
+        <% @user.movies.each do |movie| %>
+          <tr>
+            <td><%= "#{movie.title}" %></td>   <!-- ***ADD SOMETHING THAT WILL SORT THIS BY DATE DUE*** -->
+            <td><%= "#{movie.due_date}" %></td>
+          </tr>
+        <% end %>
+      </div>
+    </table>
+  </div>
 </div>
-
-<%= link_to "Back", '/admin/users' %>
-
-
-
-
+<hr>
+<div class="">
+  <%= link_to "Back", '/admin/users' %>
+</div>

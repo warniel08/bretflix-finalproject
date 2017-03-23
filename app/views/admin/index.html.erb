@@ -3,15 +3,15 @@
     <h1 class="welcome-header bretflix-blue"><strong>Welcome Admin!</strong></h1>
   </div><!-- end page-header -->
 
-  <form class="search-form" action=admin/users>
+  <form class="admin-buttons search-form" action=admin/users>
     <input class="btn btn-lg btn-primary" type="submit" value="View Users" />
   </form>
 
-  <form class="search-form" action=movies>
+  <form class="admin-buttons search-form" action=movies>
     <input class="btn btn-lg btn-primary" type="submit" value="View Movies" />
   </form>
 
-  <form class="search-form" action=movies/checked_out>
+  <form class="admin-buttons search-form" action=movies/checked_out>
     <input class="btn btn-lg btn-primary" type="submit" value="View Check Outs" />
   </form>
 
@@ -28,7 +28,7 @@
 					<h3 class="panel-title text-center">Movie Titles</h3>
 				</div><!-- end panel-heading -->
 				<div class="list-group panel-list">
-					<h4><% @checked_out.each do |movie| %>
+					<h4><% @checked_out_movies.each do |movie| %>
 					    <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>" > <%= movie.title %></a>
 					<% end %></h4>
 				</div><!-- end panel-body -->

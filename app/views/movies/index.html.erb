@@ -1,12 +1,18 @@
 <h1 class="col-md-12 movie-list-title bretflix-blue">List of Movies</h1>
 
-<h4><% @movies.each do |movie| %>
-  <div class="col-md-6 list-group">
-    <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>"> <%= movie.title %></a>
-  </div>
-<% end %></h4>
+<div class="container">
+  <h4><% @movies.each do |movie| %>
+    <div class="col-md-6 list-group">
+      <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>"> <%= movie.title %></a>
+    </div>
+  <% end %></h4>
+</div>
 
-<%= paginate @movies %>
+<hr>
+
+<div>
+  <%= paginate @movies, :theme => 'twitter-bootstrap-3' %>
+</div>
 
 <div>
   <% if current_user && current_user.is_admin?%>
