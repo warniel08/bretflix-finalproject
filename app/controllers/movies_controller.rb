@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all.order(:title)
-    @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(15)
+    @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(14)
   end
 
   def show
