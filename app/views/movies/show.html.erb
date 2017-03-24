@@ -1,54 +1,58 @@
 <h1 class="movie-detail-title bretflix-blue">Movie Details</h1>
 
-<img src="<%= @movie.poster %>" width="150" height="220" alt="<%= @movie.title %>">
+<div class="container">
+  <img src="<%= @movie.poster %>" width="150" height="220" alt="<%= @movie.title %>">
 
-<h2>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</h2>
+  <h2>
+    <strong>Title:</strong>
+    <%= @movie.title %>
+  </h2>
 
- <p>
-  <strong>Year:</strong>
-  <%= @movie.year %>
-</p>
+   <p>
+    <strong>Year:</strong>
+    <%= @movie.year %>
+  </p>
 
 
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @movie.description %>
+  </p>
 
-<p>
-  <strong>IMDB Rating:</strong>
-  <%= @movie.imdbrating %>
-</p>
+  <p>
+    <strong>IMDB Rating:</strong>
+    <%= @movie.imdbrating %>
+  </p>
 
-<p>
-  <strong># of checkouts:</strong>
-  <%= @movie.checkout_count %>
-</p>
+  <p>
+    <strong># of checkouts:</strong>
+    <%= @movie.checkout_count %>
+  </p>
 
-<p>
-  <strong>Date due:</strong>
-  <% if @movie.due_date != nil %>
-    <%= @movie.due_date %>
-  <% else %>
-    Move is available for checkout
-  <% end %>
-</p>
+  <%if current_user && current_user.is_admin?%>
+    <p>
+      <strong>Date due:</strong>
+      <% if @movie.due_date != nil %>
+        <%= @movie.due_date %>
+      <% else %>
+        Movie is available for checkout
+      <% end %>
+    </p>
+    <% end %>
+</div>
 
 <% if current_user %>
   <%if current_user.is_admin?%>
-    <%= button_to "Delete Movie", "/admin/movies/#{@movie.id}", method: :delete, class: 'bret-button', data: { confirm: "Delete #{@movie.title}?"} %>
+    <%= button_to "Delete Movie", "/admin/movies/#{@movie.id}", method: :delete, class: 'btn btn-danger', data: { confirm: "Delete #{@movie.title}?"} %>
     <%if @movie.checked_out? %>
       <br>
-      <%= button_to "Check In", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
+      <%= button_to "Check In", "/admin/movies/#{@movie.id}", method: :put, class: 'btn btn-primary' %>
     <%elsif !@movie.checked_out? %>
       <br>
-      <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
+      <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'btn btn-primary' %>
     <% end %>
   <%elsif !@movie.checked_out? %>
-    <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
+    <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'btn btn-primary' %>
   <%else%>
     <h3>Title will be available for checkout on <%= @movie.due_date %></h3>
   <% end %>
