@@ -1,29 +1,33 @@
-<h1>List of checked out movies</h1>
+<h1 class="bretflix-blue checkout-list">List of checked out movies</h1>
 
-<div class="checked-out-movie-list">
-	<table>
-		<div id="checked-out-movie-list-header">
-			<tr>
-				<th>Name</th>
-				<th>Title</th>
-				<th>Due Date</th>
-			</tr>
-		</div>
-		<div id="checked-out-movie-list-data">
-		  <% @checked_out.each do |movie| %>
-		    <tr>
-		      <td><%= "#{movie.user.full_name}" %></td>
-		      <td><%= link_to "#{movie.title}", movie_path(movie) %></td>
-		      <td><%= "#{movie.due_date}" %></td>
-		      <td><% if current_user && current_user.is_admin? %>
-		      	<%= button_to "Check In", "/admin/movies/#{movie.id}", method: :put, class: 'bret-button' %>
-		      <% end %></td>
-		    </tr>
-		  <% end %>
-	  </div>
-  </table>
+<div class="container">
+	<div class="checked-out-movie-list">
+		<table class="table table-striped">
+			<div id="checked-out-movie-list-header">
+				<tr>
+					<th>Name</th>
+					<th>Title</th>
+					<th>Due Date</th>
+					<th>Action</th>
+				</tr>
+			</div>
+			<div id="checked-out-movie-list-data">
+				<% @sorted = @checked_out.order(due_date: :asc)%>
+				<% @sorted.each do |movie| %>
+			    <tr>
+			      <td class="align-middle"><%= "#{movie.user.full_name}" %></td>
+			      <td class="align-middle"><%= link_to "#{movie.title}", movie_path(movie) %></td>
+			      <td class="align-middle"><%= "#{movie.due_date}" %></td>
+			      <td><% if current_user && current_user.is_admin? %>
+			      	<%= button_to "Check In", "/admin/movies/#{movie.id}", method: :put, class: 'btn btn-primary' %>
+			      <% end %></td>
+			    </tr>
+			  <% end %>
+		  </div>
+	  </table>
+	</div>
 </div>
-
+<hr>
 <div>
 	<%= link_to "Home", admin_index_path %>
 </div>

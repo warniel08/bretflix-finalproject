@@ -1,13 +1,57 @@
-<h1 class="welcome-header">Welcome Admin!</h1>
+<div class="well">
+  <div class="page-header">
+    <h1 class="welcome-header bretflix-blue"><strong>Welcome Admin!</strong></h1>
+  </div><!-- end page-header -->
 
-<form class="search-form" action=admin/users>
-  <input class="bret-button" type="submit" value="View Users" />
-</form>
+  <form class="admin-buttons search-form" action=admin/users>
+    <input class="btn btn-lg btn-primary" type="submit" value="View Users" />
+  </form>
 
-<form class="search-form" action=movies>
-  <input class="bret-button" type="submit" value="View Movies" />
-</form>
+  <form class="admin-buttons search-form" action=movies>
+    <input class="btn btn-lg btn-primary" type="submit" value="View Movies" />
+  </form>
 
-<form class="search-form" action=movies/checked_out>
-  <input class="bret-button" type="submit" value="View Check Outs" />
-</form>
+  <form class="admin-buttons search-form" action=movies/checked_out>
+    <input class="btn btn-lg btn-primary" type="submit" value="View Check Outs" />
+  </form>
+
+</div><!-- end well -->
+
+<div class="row bretflix-blue" id="featuresHeading">
+	<div class="col-sm-6">
+		<h2>Most Popular Titles</h2>
+		<p class="lead">Top 5 most checked out movies from Bretflix:</p>
+
+		<div class="row" id="features">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Movie Titles</h3>
+				</div><!-- end panel-heading -->
+				<div class="list-group panel-list">
+					<h4><% @checked_out_movies.each do |movie| %>
+					    <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>" > <%= movie.title %></a>
+					<% end %></h4>
+				</div><!-- end panel-body -->
+			</div><!-- end panel -->
+		</div><!-- end feature -->
+	</div><!-- end col-sm-6 -->
+
+	<div class="col-sm-6">
+		<h2> 5 Newest Titles</h2>
+		<p class="lead">Ready to be checked out from Bretflix:</p>
+
+		<div class="row" id="features">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Movie Titles</h3>
+				</div><!-- end panel-heading -->
+				<div class="list-group panel-list">
+          <% newest = Movie.all.order(created_at: :desc).limit(5) %>
+					<h4><% newest.each do |movie| %>
+					    <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>" > <%= movie.title %></a>
+					<% end %></h4>
+				</div><!-- end panel-body -->
+			</div><!-- end panel -->
+		</div><!-- end feature -->
+	</div><!-- end col-sm-6 -->
+</div><!-- end featuresHeading -->
