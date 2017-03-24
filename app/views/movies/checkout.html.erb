@@ -1,7 +1,15 @@
-<h1>Successfully Checked Out</h1>
-<h2><%=@movie.title%> is due on <%=@movie.due_date%></h2>
-
+<h1 class="bretflix-blue checkout">Successfully Checked Out</h1>
+<hr>
+<div class="container">
+  <h3>***<%=@movie.title%> is due on <%=@movie.due_date%>***</h3>
+</div>
+<hr>
 <%= link_to 'View Collection', movies_path %>
 <br>
-<%= link_to 'Home', root_path %>
-
+<div>
+  <% if current_user && current_user.is_admin?%>
+    <%= link_to 'Home', admin_index_path %>
+  <% else %>
+    <%= link_to 'Home', root_path %>
+  <% end %>
+</div>

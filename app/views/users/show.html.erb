@@ -44,7 +44,8 @@
           </tr>
         </div>
         <div class="movie-user-list">
-          <% @user.movies.each do |movie| %>
+          <% @sorted = @user.movies.order(due_date: :asc)%>
+          <% @sorted.each do |movie| %>
             <tr class="user-movie-list-header">
               <td><%= "#{movie.title}" %></td>   <!-- ***ADD SOMETHING THAT WILL SORT THIS BY DATE DUE*** -->
               <td><%= "#{movie.due_date}" %></td>
