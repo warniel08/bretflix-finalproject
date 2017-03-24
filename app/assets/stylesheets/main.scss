@@ -173,6 +173,7 @@ h3.show {
 
 .checkout-list {
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .users-list-title {
@@ -181,6 +182,10 @@ h3.show {
 
 .users-list {
   list-style-type: none;
+}
+
+.table > tbody > tr > td.align-middle {
+  padding-top: 15px;
 }
 
 /*body .container {

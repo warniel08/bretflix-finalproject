@@ -28,6 +28,15 @@
   <%= @movie.checkout_count %>
 </p>
 
+<p>
+  <strong>Date due:</strong>
+  <% if @movie.due_date != nil %>
+    <%= @movie.due_date %>
+  <% else %>
+    Move is available for checkout
+  <% end %>
+</p>
+
 <% if current_user %>
   <%if current_user.is_admin?%>
     <%= button_to "Delete Movie", "/admin/movies/#{@movie.id}", method: :delete, class: 'bret-button', data: { confirm: "Delete #{@movie.title}?"} %>
@@ -42,7 +51,7 @@
     <%= button_to "Check Out", "/admin/movies/#{@movie.id}", method: :put, class: 'bret-button' %>
   <%else%>
     <h3>Title will be available for checkout on <%= @movie.due_date %></h3>
-  <% end %>  
+  <% end %>
 <% end %>
 
 <br>
