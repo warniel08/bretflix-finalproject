@@ -1,13 +1,17 @@
-<h1 class="bretflix-blue">List of Users</h1>
-
-<div class="movie-user-list">
-  <% @users.each do |user| %>
-    <ul>
-      <li><%= link_to "#{user.full_name_reversed}", "users/#{user.id}"%></a></li>
-    </ul>
-  <% end %>
+<h1 class="bretflix-blue users-list-title">List of Users</h1>
+<hr>
+<div class="container">
+  <div class="movie-user-list">
+    <% @users.each do |user| %>
+      <div class="col-md-6">
+        <ul class="users-list">
+          <li><h2><%= link_to "#{user.full_name_reversed}", "users/#{user.id}"%></a></h2></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to 'Back', admin_index_path %>
-
-
+<hr>
+<div>
+  <%= link_to 'Back', admin_index_path %>
+</div>
