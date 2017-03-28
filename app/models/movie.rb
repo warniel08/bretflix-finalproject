@@ -14,8 +14,10 @@ class Movie < ApplicationRecord
     title_data = []
     year_data = []
     tt_data = []
+    disc_type = []
     CSV.foreach(filename) do |row|
       title_data << row[2]
+      disc_type << row[4]
       year_data << row[5]
       tt_data << row[6]
     end
@@ -24,7 +26,7 @@ class Movie < ApplicationRecord
     while i < title_data.length do
       response = HTTParty.get("http://www.omdbapi.com/?i=#{tt_data[i]}&plot=short&r=json")
       data = JSON.parse(response.body)
-      Movie.find_or_create_by(title: title_data[i], year: year_data[i], description: data["Plot"], poster: data["Poster"], imdbrating: data["imdbRating"], checkout_count: 0, created_at: Time.now, updated_at: Time.now)
+      Movie.find_or_create_by(title: title_data[i], disc_type: disc_type[i], year: year_data[i], description: data["Plot"], poster: data["Poster"], imdbrating: data["imdbRating"], checkout_count: 0, created_at: Time.now, updated_at: Time.now)
       i +=1
     end
 

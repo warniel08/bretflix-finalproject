@@ -3,7 +3,7 @@
 <div class="container">
   <h4><% @movies.each do |movie| %>
     <div class="col-md-6 list-group">
-      <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>"> <%= movie.title %></a>
+      <a href="/movies/<%= movie.id %>" class="list-group-item"><img src="<%= movie.poster %>" width="60" height="88" alt="<%= movie.title %>"> <%= movie.title %> (<%= movie.disc_type %>)</a>
     </div>
   <% end %></h4>
 </div>
